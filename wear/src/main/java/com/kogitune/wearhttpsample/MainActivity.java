@@ -7,8 +7,9 @@ import android.support.wearable.view.WatchViewStub;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.kogitune.wearhttp.WearGetImageContents;
-import com.kogitune.wearhttp.WearGetTextContents;
+import com.kogitune.wearhttp.WearGetImage;
+import com.kogitune.wearhttp.WearGetText;
+
 
 public class MainActivity extends Activity {
 
@@ -27,9 +28,9 @@ public class MainActivity extends Activity {
                 mImageView = (ImageView) stub.findViewById(R.id.image);
 
                 mTextView.setText("start");
-                new WearGetTextContents(MainActivity.this).getContents("http://headers.jsontest.com/", new WearGetTextContents.WearGetContentsCallBack() {
+                new WearGetText(MainActivity.this).get("http://headers.jsontest.com/", new WearGetText.WearGetCallBack() {
                     @Override
-                    public void onGetContents(String contents) {
+                    public void onGet(String contents) {
                         mTextView.setText(contents);
                     }
 
@@ -37,11 +38,11 @@ public class MainActivity extends Activity {
                     public void onFail(final Exception e) {
                         mTextView.setText(e.getMessage());
                     }
-                }, 10);
-                new WearGetImageContents(MainActivity.this).getContents("https://cloud.githubusercontent.com/assets/1386930/4347967/65f420c4-4176-11e4-8cb6-d70f1867f8cb.png",
-                        new WearGetImageContents.WearGetContentsCallBack() {
+                });
+                new WearGetImage(MainActivity.this).get("https://cloud.githubusercontent.com/assets/1386930/4347967/65f420c4-4176-11e4-8cb6-d70f1867f8cb.png",
+                        new WearGetImage.WearGetCallBack() {
                             @Override
-                            public void onGetContents(Bitmap image) {
+                            public void onGet(Bitmap image) {
                                 mImageView.setImageBitmap(image);
                             }
 
@@ -49,7 +50,7 @@ public class MainActivity extends Activity {
                             public void onFail(final Exception e) {
                                 mTextView.setText(e.getMessage());
                             }
-                        }, 10
+                        }
                 );
 
 

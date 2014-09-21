@@ -64,7 +64,7 @@
     <orderEntry type="library" exported="" name="play-services-wearable-5.0.77" level="project" />
     <orderEntry type="library" exported="" name="okhttp-1.6.0" level="project" />
     <orderEntry type="library" exported="" name="support-v4-19.1.0" level="project" />
-    <orderEntry type="library" exported="" name="mobile" level="project" />
+    <orderEntry type="library" exported="" name="wear-http-0.0.2" level="project" />
   </component>
 </module>
 

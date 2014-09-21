@@ -19,16 +19,12 @@ android {
     }
 }
 repositories {
-    mavenCentral()
-    flatDir {
-        dirs '../../WearHttp/mobile/build/outputs/aar'
-    }
+    maven { url 'http://raw.github.com/takahirom/WearHttp/master/repository/' }
 }
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     wearApp project(':wear')
     compile 'com.google.android.gms:play-services-wearable:+'
-    compile(name:'mobile', ext:'aar')
-    compile 'com.squareup.okhttp:okhttp:1.6.0'
+    compile 'com.kogitune:wear-http:0.0.+'
 }
