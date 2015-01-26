@@ -17,15 +17,12 @@ android {
         }
     }
 }
-repositories {
-    maven { url 'http://raw.github.com/takahirom/WearHttp/master/repository/' }
-    maven { url 'http://raw.github.com/takahirom/WearSharedPreferences/master/repository/' }
-}
+
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     wearApp project(':wear')
     compile 'com.google.android.gms:play-services-wearable:+'
-    compile 'com.kogitune:wear-http:0.0.3'
+    compile 'com.kogitune:wear-http:0.0.4'
 
 }
