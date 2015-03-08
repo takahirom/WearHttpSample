@@ -22,8 +22,14 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     wearApp project(':wear')
-    compile 'com.google.android.gms:play-services-wearable:+'
-    compile 'com.kogitune:wear-http:0.0.4'
     compile 'com.android.support:appcompat-v7:21.0.+'
+    compile 'com.google.android.gms:play-services-wearable:+'
+    compile 'com.kogitune:wear-http:0.0.5'
+
+    // If you want to use com.google.android.gms:play-services exclude
+//    compile 'com.google.android.gms:play-services:+'
+//    compile ('com.kogitune:wear-http:0.0.5'){
+//        exclude group: 'com.google.android.gms'
+//    }
 
 }
